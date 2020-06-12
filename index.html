@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html ng-app>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+        <link href="quotemaker.css" type="text/css" rel="stylesheet" />
+        <script src="angular-js.js"></script>
+    </head>
+    <body>
+        <h1 class="title">
+        QuoteMaker
+        </h1><br/>
+        <h2 class="slogan">
+        Upload pictures and quotes to make backgrounds!
+        </h2>
+        <input type="file" id="inpFile" multiple>
+        <button id="btnUpload">Upload Files</button>
+    <script>
+        const inpFile = document.getElementById('inpFile');
+        const btnUpload = document.getElementById('btnUpload');
+
+        btnUpload.addEventListener('click', function() {
+            const xhr = new XMLHttpRequest();
+            const formData = new FormData();
+
+            for (const file of inpFile.files) {
+                formData.append("myFiles[]", file);
+            }
+
+            xhr.open("post", "upload.php");
+            xhr.send(formData);
+        });
+    </script>
+    </body>
+</html>
+

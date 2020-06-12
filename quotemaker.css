@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+
+.title {
+    font-family: "Raleway";
+    font-size: 42px;
+    color: #00C853;
+    margin: 10px;
+    margin-left: 20px;
+    padding: 10px;
+}
+
+.slogan {
+    font-family: "Raleway";
+}
+
+.photoinput {
+    border: black solid 1px;
+    padding: 150px;
+    width: 150px;
+    float: left;
+    margin-left: 250px;
+}
+.button1 {
+    background-color: #00C853;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    font-family: "Raleway";
+    font-weight: bold;
+}
+
+.quoteinput {
+    border: black solid 1px;
+    padding: 50px;
+    width: 400px;
+    float: left;
+    margin-left: 100px;
+}
+
+.button2 {
+    background-color: #00C853;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    font-family: "Raleway";
+    font-weight: bold;
+    margin-left: 140px;
+}
+
+.quoteList {
+    border: #00C853 1px solid;
+    position: absolute;
+    top: 600px;
+    left: 600px;
+    height: 200px;
+    width: 300px;
+    text-align: right;
+}
