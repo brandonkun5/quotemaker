@@ -1,0 +1,12 @@
+Upload Picture to Browser
+-Used input element to allow user to input picture
+-Created button that uploaded the picture to a php server
+
+Upload Quote to Browser
+-created form element to hold the quote input
+-created textarea box for user to input text.
+
+Create canvas element
+-Upload picture to canvas element.
+-Upload text to canvas element.
+
