@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@700&family=Roboto&display=swap');
 
 .title {
     font-family: "Raleway";
@@ -7,27 +9,109 @@
     margin: 10px;
     margin-left: 20px;
     padding: 10px;
+    font-weight: bold;
 }
 
 .slogan {
     font-family: "Raleway";
+    margin: auto;
+    position: center;
+    width: 70%;
+    margin-bottom: 20px;
 }
 
-.photoinput {
-    border: black solid 1px;
-    padding: 150px;
-    width: 150px;
-    float: left;
-    margin-left: 250px;
-}
-.button1 {
-    background-color: #00C853;
-    color: white;
+.instructions {
+    border: 1px solid grey;
+    border-radius: 8px;
     padding: 20px;
-    border-radius: 10px;
-    font-family: "Raleway";
-    font-weight: bold;
+    position: center;
+    width: 550px;
+    margin: auto;
+    margin-top: 20px;
 }
+
+.fileUpload {
+    width: 80%;
+    margin: auto;
+}
+
+.stepOne {
+    border-bottom: grey 2px solid;
+    margin-top: 50px;
+    margin-bottom: 30px;
+    width: 90%;
+    margin-left: 20px;
+}
+
+.stepTwo {
+    border-bottom: 2px grey solid;
+    margin-top: 50px;
+    margin-bottom: 30px;
+    width: 90%;
+    margin-left: 20px;
+}
+
+.stepThree {
+    border-bottom: 2px grey solid;
+    margin-top: 50px;
+    margin-bottom: 30px;
+    width: 90%;
+    margin-left: 20px;
+}
+
+.name {
+    display: inline-block;
+    margin-left: 40px;
+}
+
+.color {
+    display: inline-block;
+    margin-left: 75px;
+}
+
+.font {
+    display: inline-block;
+    margin-left: 60px;
+}
+
+.size {
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.quoteLocation {
+    display: inline-block;
+    margin-left: 10px;
+}
+
+#setAll {
+    display: inline;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: white;
+    background-color: #00C853;
+    cursor: pointer;
+    border: 1px solid #00C853;
+    border-radius: 8px;
+}
+
+#form {
+    width: 1000px;
+    margin: auto;
+}
+
+#customButton {
+    padding: 10px;
+    color: white;
+    background-color: #00C853;
+    cursor: pointer;
+    border: 1px solid #00C853;
+}
+
+#customButton:hover {
+    background-color: green;
+}
+
 
 .quoteinput {
     border: black solid 1px;
@@ -37,22 +121,181 @@
     margin-left: 100px;
 }
 
-.button2 {
+#uploadButton {
+    margin-left: 55%;
     background-color: #00C853;
+    border: #00C853;
+    border-radius: 8px;
+    padding: 15px;
     color: white;
-    padding: 20px;
-    border-radius: 10px;
-    font-family: "Raleway";
-    font-weight: bold;
-    margin-left: 140px;
+}
+#outputOne {
+    position: relative;
+    top: 39px;
+    left: 10%;
+    width: 1000px;
+    height: 500px;
 }
 
-.quoteList {
-    border: #00C853 1px solid;
+#canvasOne {
     position: absolute;
-    top: 600px;
-    left: 600px;
-    height: 200px;
-    width: 300px;
-    text-align: right;
+    top: 1200px;
+    width: 1000px;
+    height: 500px;
+    border: 1px solid black;
+    margin-left: 10%;
 }
+
+#outputTwo {
+    position: relative;
+    top: 139px;
+    left: 10%;
+    width: 1000px;
+    height: 500px;
+}
+
+#canvasTwo {
+    position: absolute;
+    top: 1800px;
+    width: 1000px;
+    height: 500px;
+    border: 1px solid black;
+    margin-left: 10%;
+}
+
+#outputThree {
+    position: relative;
+    top: 239px;
+    left: 10%;
+    width: 1000px;
+    height: 500px;
+}
+
+#canvasThree {
+    position: absolute;
+    top: 2400px;
+    width: 1000px;
+    height: 500px;
+    border: 1px solid black;
+    margin-left: 10%;
+}
+
+#outputFour {
+    position: relative;
+    top: 339px;
+    left: 10%;
+    width: 1000px;
+    height: 500px;
+}
+
+#canvasFour {
+    position: absolute;
+    top: 3000px;
+    width: 1000px;
+    height: 500px;
+    border: 1px solid black;
+    margin-left: 10%;
+}
+
+#outputFive {
+    position: relative;
+    top: 439px;
+    left: 10%;
+    width: 1000px;
+    height: 500px;
+}
+
+#canvasFive {
+    position: absolute;
+    top: 3600px;
+    width: 1000px;
+    height: 500px;
+    border: 1px solid black;
+    margin-left: 10%;
+}
+
+#outputSix {
+    position: relative;
+    top: 539px;
+    left: 10%;
+    width: 1000px;
+    height: 500px;
+}
+
+#canvasSix {
+    position: absolute;
+    top: 4200px;
+    width: 1000px;
+    height: 500px;
+    border: 1px solid black;
+    margin-left: 10%;
+}
+
+#outputSeven {
+    position: relative;
+    top: 639px;
+    left: 10%;
+    width: 1000px;
+    height: 500px;
+}
+
+#canvasSeven {
+    position: absolute;
+    top: 4800px;
+    width: 1000px;
+    height: 500px;
+    border: 1px solid black;
+    margin-left: 10%;
+}
+
+#outputEight {
+    position: relative;
+    top: 739px;
+    left: 10%;
+    width: 1000px;
+    height: 500px;
+}
+
+#canvasEight {
+    position: absolute;
+    top: 5400px;
+    width: 1000px;
+    height: 500px;
+    border: 1px solid black;
+    margin-left: 10%;
+}
+
+#outputNine {
+    position: relative;
+    top: 839px;
+    left: 10%;
+    width: 1000px;
+    height: 500px;
+}
+
+#canvasNine {
+    position: absolute;
+    top: 6000px;
+    width: 1000px;
+    height: 500px;
+    border: 1px solid black;
+    margin-left: 10%;
+}
+
+#outputTen {
+    position: relative;
+    top: 939px;
+    left: 10%;
+    width: 1000px;
+    height: 500px;
+}
+
+#canvasTen {
+    position: absolute;
+    top: 6600px;
+    width: 1000px;
+    height: 500px;
+    border: 1px solid black;
+    margin-left: 10%;
+}
+
