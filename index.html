@@ -3,22 +3,318 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
         <link href="quotemaker.css" type="text/css" rel="stylesheet" />
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
         <script src="angular-js.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
     </head>
     <body>
         <h1 class="title">
         QuoteMaker
         </h1><br/>
         <h2 class="slogan">
-        Upload pictures and quotes to make backgrounds!
+        Upload pictures and quotes to make custom desktop backgrounds!
         </h2>
-        <input type="file" id="inpFile" multiple>
-        <button id="btnUpload">Upload Files</button>
+        <div class="instructions">
+            <h3>Step 1: Upload Background Photos</h3>
+            <h3>Step 2: Upload Quotes</h3>
+            <h3>Step 3: Screenshot Desktop Backgrounds</h3>
+        </div>
+        <div class="stepOne">
+            <h3>Step 1: Upload Background Photos</h3>
+        </div>
+        <form class="fileUpload">
+            <div class="custom-file">
+                <input type="file" class="custom-file-input" name="file" id="inpFile" accept="image/*" multiple  />
+                <label for="customFile" class="custom-file-label">Upload Background Pictures</label>
+            </div>
+        </form>
+        <div class="stepTwo">
+            <h3>Step 2: Upload Quotes</h3>
+        </div>
+        <form id="form" action="/upload.php" method="POST">
+            <fieldset>
+                <label for="quotes">Insert your Quotes here</label>
+                <label for="author" class="name">Enter Author's Name</label>
+                <label for="color" class="font">Font (Family)</label>
+                <label for="color" class="color">(Color)</label>
+                <label for="font-size" class="size">(Size)</label>
+                <label for="quoteLocation" class="quoteLocation">Quote Location</label>
+                <input type="text" id="quote"> 
+                <input type="text" id="author">
+                <select id="font-family">
+                    <option value="Times New Roman">Times New Roman</option>
+                    <option value="Arial">Arial</option>
+                    <option value="Raleway">Raleway</option>
+                    <option value="Roboto">Roboto</option>
+                    <option value="Lato">Lato</option>
+                </select>
+                <input type="color" value="#000000" id="colorOne" />
+                <input type="text" id="font-size" style="width: 50px;height: 30px;">
+                <select name="location" id="location">
+                    <option value="TopL">Top Left</option>
+                    <option value="TopR">Top Right</option>
+                    <option value="BottomL">Bottom Left</option>
+                    <option value="BottomR">Bottom Right</option>
+                </select>
+                <input type="submit" name="setAll" id="setAll" value="Set All">
+            </fieldset>
+            <fieldset>
+                <input type="text" id="quoteTwo"> 
+                <input type="text" id="authorTwo">
+                <select id="font-familyTwo">
+                    <option value="Times New Roman">Times New Roman</option>
+                    <option value="Arial">Arial</option>
+                    <option value="Raleway">Raleway</option>
+                    <option value="Roboto">Roboto</option>
+                    <option value="Lato">Lato</option>
+                </select>
+                <input type="color" value="#000000" id="colorTwo" />
+                <input type="text" id="font-sizeTwo" style="width: 50px;height: 30px;">
+                <select name="location" id="locationTwo">
+                    <option value="TopL">Top Left</option>
+                    <option value="TopR">Top Right</option>
+                    <option value="BottomL">Bottom Left</option>
+                    <option value="BottomR">Bottom Right</option>
+                </select>
+            </fieldset>
+            <fieldset>
+                <input type="text" id="quoteThree"> 
+                <input type="text" id="authorThree">
+                <select id="font-familyThree">
+                    <option value="Times New Roman">Times New Roman</option>
+                    <option value="Arial">Arial</option>
+                    <option value="Raleway">Raleway</option>
+                    <option value="Roboto">Roboto</option>
+                    <option value="Lato">Lato</option>
+                </select>
+                <input type="color" value="#000000" id="colorThree" />
+                <input type="text" id="font-sizeThree" style="width: 50px;height: 30px;">
+                <select name="location" id="locationThree">
+                    <option value="TopL">Top Left</option>
+                    <option value="TopR">Top Right</option>
+                    <option value="BottomL">Bottom Left</option>
+                    <option value="BottomR">Bottom Right</option>
+                </select>
+            </fieldset>
+            <fieldset>
+                <input type="text" id="quoteFour"> 
+                <input type="text" id="authorFour">
+                <select id="font-familyFour">
+                    <option value="Times New Roman">Times New Roman</option>
+                    <option value="Arial">Arial</option>
+                    <option value="Raleway">Raleway</option>
+                    <option value="Roboto">Roboto</option>
+                    <option value="Lato">Lato</option>
+                </select>
+                <input type="color" value="#000000" id="colorFour" />
+                <input type="text" id="font-sizeFour" style="width: 50px;height: 30px;">
+                <select name="location" id="locationFour">
+                    <option value="TopL">Top Left</option>
+                    <option value="TopR">Top Right</option>
+                    <option value="BottomL">Bottom Left</option>
+                    <option value="BottomR">Bottom Right</option>
+                </select>
+            </fieldset>
+            <fieldset>
+                <input type="text" id="quoteFive"> 
+                <input type="text" id="authorFive">
+                <select id="font-familyFive">
+                    <option value="Times New Roman">Times New Roman</option>
+                    <option value="Arial">Arial</option>
+                    <option value="Raleway">Raleway</option>
+                    <option value="Roboto">Roboto</option>
+                    <option value="Lato">Lato</option>
+                </select>
+                <input type="color" value="#000000" id="colorFive" />
+                <input type="text" id="font-sizeFive" style="width: 50px;height: 30px;">
+                <select name="location" id="locationFive">
+                    <option value="TopL">Top Left</option>
+                    <option value="TopR">Top Right</option>
+                    <option value="BottomL">Bottom Left</option>
+                    <option value="BottomR">Bottom Right</option>
+                </select>
+            </fieldset>
+            <fieldset>
+                <input type="text" id="quoteSix"> 
+                <input type="text" id="authorSix">
+                <select id="font-familySix">
+                    <option value="Times New Roman">Times New Roman</option>
+                    <option value="Arial">Arial</option>
+                    <option value="Raleway">Raleway</option>
+                    <option value="Roboto">Roboto</option>
+                    <option value="Lato">Lato</option>
+                </select>
+                <input type="color" value="#000000" id="colorSix" />
+                <input type="text" id="font-sizeSix" style="width: 50px;height: 30px;">
+                <select name="location" id="locationSix">
+                    <option value="TopL">Top Left</option>
+                    <option value="TopR">Top Right</option>
+                    <option value="BottomL">Bottom Left</option>
+                    <option value="BottomR">Bottom Right</option>
+                </select>
+            </fieldset>
+            <fieldset>
+                <input type="text" id="quoteSeven"> 
+                <input type="text" id="authorSeven">
+                <select id="font-familySeven">
+                    <option value="Times New Roman">Times New Roman</option>
+                    <option value="Arial">Arial</option>
+                    <option value="Raleway">Raleway</option>
+                    <option value="Roboto">Roboto</option>
+                    <option value="Lato">Lato</option>
+                </select>
+                <input type="color" value="#000000" id="colorSeven" />
+                <input type="text" id="font-sizeSeven" style="width: 50px;height: 30px;">
+                <select name="location" id="locationSeven">
+                    <option value="TopL">Top Left</option>
+                    <option value="TopR">Top Right</option>
+                    <option value="BottomL">Bottom Left</option>
+                    <option value="BottomR">Bottom Right</option>
+                </select>
+            </fieldset>
+            <fieldset>
+                <input type="text" id="quoteEight"> 
+                <input type="text" id="authorEight">
+                <select id="font-familyEight">
+                    <option value="Times New Roman">Times New Roman</option>
+                    <option value="Arial">Arial</option>
+                    <option value="Raleway">Raleway</option>
+                    <option value="Roboto">Roboto</option>
+                    <option value="Lato">Lato</option>
+                </select>
+                <input type="color" value="#000000" id="colorEight" />
+                <input type="text" id="font-sizeEight" style="width: 50px;height: 30px;">
+                <select name="location" id="locationEight">
+                    <option value="TopL">Top Left</option>
+                    <option value="TopR">Top Right</option>
+                    <option value="BottomL">Bottom Left</option>
+                    <option value="BottomR">Bottom Right</option>
+                </select>
+            </fieldset>
+            <fieldset>
+                <input type="text" id="quoteNine"> 
+                <input type="text" id="authorNine">
+                <select id="font-familyNine">
+                    <option value="Times New Roman">Times New Roman</option>
+                    <option value="Arial">Arial</option>
+                    <option value="Raleway">Raleway</option>
+                    <option value="Roboto">Roboto</option>
+                    <option value="Lato">Lato</option>
+                </select>
+                <input type="color" value="#000000" id="colorNine" />
+                <input type="text" id="font-sizeNine" style="width: 50px;height: 30px;">
+                <select name="location" id="locationNine">
+                    <option value="TopL">Top Left</option>
+                    <option value="TopR">Top Right</option>
+                    <option value="BottomL">Bottom Left</option>
+                    <option value="BottomR">Bottom Right</option>
+                </select>
+            </fieldset>
+            <fieldset>
+                <input type="text" id="quoteTen"> 
+                <input type="text" id="authorTen">
+                <select id="font-familyTen">
+                    <option value="Times New Roman">Times New Roman</option>
+                    <option value="Arial">Arial</option>
+                    <option value="Raleway">Raleway</option>
+                    <option value="Roboto">Roboto</option>
+                    <option value="Lato">Lato</option>
+                </select>
+                <input type="color" value="#000000" id="colorTen" />
+                <input type="text" id="font-sizeTen" style="width: 50px;height: 30px;">
+                <select name="location" id="locationTen">
+                    <option value="TopL">Top Left</option>
+                    <option value="TopR">Top Right</option>
+                    <option value="BottomL">Bottom Left</option>
+                    <option value="BottomR">Bottom Right</option>
+                </select>
+            </fieldset>
+        </form>
+        <br>
+        <input type="submit" id="uploadButton" value="Upload Quotes">
+        <div class="stepThree">
+            <h2>Step 3: Screenshot Desktop Backgrounds</h2>
+        </div>
+        <canvas id="canvasOne"></canvas>
+        <canvas id="canvasTwo"></canvas>
+        <canvas id="canvasThree"></canvas>
+        <canvas id="canvasFour"></canvas>
+        <canvas id="canvasFive"></canvas>
+        <canvas id="canvasSix"></canvas>
+        <canvas id="canvasSeven"></canvas>
+        <canvas id="canvasEight"></canvas>
+        <canvas id="canvasNine"></canvas>
+        <canvas id="canvasTen"></canvas>
+        <div id="outputOne">
+            <div id="quoteOutput">
+                <h2 id="quoted"></h2>
+                <h2 id="authored"></h2>
+            </div>
+        </div>
+        <div id="outputTwo">
+            <div id="quoteOutputTwo">
+                <h2 id="quotedTwo"></h2>
+                <h2 id="authoredTwo"></h2>
+            </div>
+        </div>
+        <div id="outputThree">
+            <div id="quoteOutputThree">
+                <h2 id="quotedThree"></h2>
+                <h2 id="authoredThree"></h2>
+            </div>
+        </div>
+        <div id="outputFour">
+            <div id="quoteOutputFour">
+                <h2 id="quotedFour"></h2>
+                <h2 id="authoredFour"></h2>
+            </div>
+        </div>
+        <div id="outputFive">
+            <div id="quoteOutputFive">
+                <h2 id="quotedFive"></h2>
+                <h2 id="authoredFive"></h2>
+            </div>
+        </div>
+        <div id="outputSix">
+            <div id="quoteOutputSix">
+                <h2 id="quotedSix"></h2>
+                <h2 id="authoredSix"></h2>
+            </div>
+        </div>
+        <div id="outputSeven">
+            <div id="quoteOutputSeven">
+                <h2 id="quotedSeven"></h2>
+                <h2 id="authoredSeven"></h2>
+            </div>
+        </div>
+        <div id="outputEight">
+            <div id="quoteOutputEight">
+                <h2 id="quotedEight"></h2>
+                <h2 id="authoredEight"></h2>
+            </div>
+        </div>
+        <div id="outputNine">
+            <div id="quoteOutputNine">
+                <h2 id="quotedNine"></h2>
+                <h2 id="authoredNine"></h2>
+            </div>
+        </div>
+        <div id="outputTen">
+            <div id="quoteOutputTen">
+                <h2 id="quotedTen"></h2>
+                <h2 id="authoredTen"></h2>
+            </div>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+        <script src="jquery-1.11.0.js"></script>
+        <script src="quotemaker.js"></script>
     <script>
         const inpFile = document.getElementById('inpFile');
-        const btnUpload = document.getElementById('btnUpload');
+        const picUpload = document.getElementById('picUpload');
 
-        btnUpload.addEventListener('click', function() {
+        picUpload.addEventListener('click', function() {
             const xhr = new XMLHttpRequest();
             const formData = new FormData();
 
